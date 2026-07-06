@@ -1,5 +1,7 @@
 # 🎲 Roll A Dice
 
+![Roll A Dice Screenshot](screenshot/screenshot.png)
+
 A modern and interactive dice game built with **HTML, CSS, and JavaScript**.
 
 Roll the dice, collect your score, and challenge your opponent.  
@@ -7,7 +9,7 @@ A simple but addictive game project created to practice JavaScript logic and DOM
 
 ## 🚀 Live Demo
 
- https://ehsanellahi1385-commits.github.io/Roll-a-dice/
+https://ehsanellahi1385-commits.github.io/Roll-a-dice/
 
 ## ✨ Features
 
