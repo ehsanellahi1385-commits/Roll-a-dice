@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #14142b, #0a0a12 70%);
+  overflow: hidden;
+  color: white;
+}
+
+/* background glow */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 0;
+}
+
+body::before {
+  background: #6c5ce7;
+  top: -150px;
+  left: -150px;
+}
+
+body::after {
+  background: #00cec9;
+  bottom: -150px;
+  right: -150px;
+}
+
+/* GAME LAYOUT */
+.game {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  z-index: 2;
+}
+
+/* PLAYER */
+.player {
+  width: 280px;
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.player--active {
+  transform: scale(1.05);
+  border: 1px solid #00cec9;
+  box-shadow: 0 0 25px #00cec9;
+}
+
+h2 {
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.score {
+  font-size: 60px;
+  color: #00cec9;
+  text-shadow: 0 0 20px #00cec9;
+}
+
+.current-box {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* DICE CENTER TOP */
+.dice {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95px;
+  filter: drop-shadow(0 0 15px white);
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -12px);
+  }
+}
+
+/* HUD CONTROL BAR (MAIN FIX) */
+.controls {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+}
+
+/* BUTTONS */
+.btn {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #00cec9, #6c5ce7);
+  transition: 0.25s;
+  min-width: 140px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #00cec9;
+}
+
+.hidden {
+  display: none;
+}
